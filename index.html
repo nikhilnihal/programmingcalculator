@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/ll.ico">
+ 
+    <title>Programming Calculator</title>
+ 
+	<link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/internal_function.js"></script>
+ 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+  </head>
+ 
+ 
+ 
+ 
+ 
+  <body style="background:lightblue;">
+      <div class="header clearfix navbar navbar-inverse" id="nav">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="index.html">HOME</a></li>
+            <li role="presentation"><a href="download.html">DOWNLOAD</a></li>
+            <li role="presentation"><a href="code.html">CODE</a></li>
+          </ul>
+        </nav>
+      </div>
+ 
+	<div class="container" style="height:100%; background:lightblue;">
+      <div class="jumbotron">
+		<div class="row" id="uplebel">
+		  <img src="images/logo.png" style="object-fit: contain;">
+        </div>
+ 
+	   <div class="container container-fluid" id="border" style="background:grey;">
+		<div class="row" style="height:100%; background:grey;">
+		 <div class="col-md-9 col-xs-9">
+		   <div class="row">
+		     <div id="bu" class="col-md-4 col-xs-6 nopadding"> <button type="button" id="wide" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myhcf">  <span class="button-text"> H.C.F </span></button> </div>
+		     <div id="bu" class="col-md-4 col-xs-6 nopadding"> <button type="button" id="wide" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#mylcm">  <span class="button-text"> L.C.M </span></button></div>
+			 <div id="bu" class="col-md-4 col-xs-6 nopadding"> <button type="button" id="wide" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#mypower"><span class="button-text"> Power </span></button></div>
+		     <div id="bu" class="col-md-4 col-xs-6 nopadding"> <button type="button" id="wide" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myxor">  <span class="button-text"> XOR </span> </button></div>
+		     <div id="bu" class="col-md-4 col-xs-6 nopadding"> <button type="button" id="wide" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myor">   <span class="button-text"> OR </span> </button></div>
+			 <div id="bu" class="col-md-4 col-xs-6 nopadding"> <button type="button" id="wide" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myand">  <span class="button-text"> AND </span> </button></div>
+		   </div>
+		   <div class="row">
+		     <div class="col-md-12 col-xs-12 nopadding">
+		     <button type="button" id="long" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myratio"> <span class="button-text"> Ratio of Two Numbers </span></button>
+			 </div>
+		   </div>
+		 </div>
+ 
+		 <div class="col-xs-3 col-md-3 nopadding">
+		   </br> 
+		   <div class="row">
+		     <div class="col-xs-12 col-md-12" >
+			   <button type="button" id="lwide" class="btn btn-primary" data-toggle="modal" data-target="#myb2d"> <span class="button-text"> Binary </br> To</br> Decimal </span> </button>
+			 </div>
+ 
+		     <div class="col-xs-12 col-md-12 ">
+			   <button type="button" id="lwide" class="btn btn-primary" data-toggle="modal" data-target="#myd2b"> <span class="button-text"> Decimal </br> To</br> Binary </span> </button>
+			 </div>
+		   </div>
+		 </div>
+        </div>
+	   </div>
+      </div>
+    </div> <!-- /container -->
+ 
+ 
+ 
+	<!---- hcf --->
+	<div class="modal fade" id="myhcf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><span class="button-text"> <b> Highest Common Factor </b> </span></h4>
+       </div>
+       <div class="modal-body">
+         <h3> <span class="button-text"> <b>  Enter First Number </b> </span>  </h3> <input type="text" id="longtext1" maxlength="8" /> </br> 
+         <h3> <span class="button-text"> <b>  Enter Second Number </b> </span>  </h3> <input type="text" id="longtext2" maxlength="8" /> </br>  </br> 
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="HCF()" > Find H.C.F </button>			 
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showhcf"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- hcf end --->
+ 
+ 
+ 
+ 
+ 
+	<!---- lcm --->
+	<div class="modal fade" id="mylcm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Lowest Common Multiple</h4>
+       </div>
+       <div class="modal-body">
+         <h3>  <span class="button-text"> <b>  Enter First Number </b> </span> </h3> <input type="text" id="lcmnum1" maxlength="8" /> </br>
+         <h3>  <span class="button-text"> <b>  Enter Second Number </b> </span> </h3> <input type="text" id="lcmnum2" maxlength="8" /> </br>
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="LCM()" > Find L.C.M </button>			
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showlcm"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- lcm end --->
+ 
+ 
+ 
+	<!---- power --->
+	<div class="modal fade" id="mypower" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header"style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Power</h4>
+       </div>
+       <div class="modal-body">
+         <h3> <span class="button-text"> <b>  Enter Base Number </b> </span>  </h3> <input type="text" id="pownum1" maxlength="8" /> </br>
+         <h3> <span class="button-text"> <b> Enter Power Number </b> </span> </h3> <input type="text" id="pownum2" maxlength="8" /> </br>
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="POWER()" > Power </button>	 		
+       </div>
+       <div class="modal-footer"style="background:lightblue;">
+	    <label id="showpower"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- power end --->
+ 
+ 
+ 
+	<!---- xor --->
+	<div class="modal fade" id="myxor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Logical XOR of two Decimal Numbers</h4>
+       </div>
+       <div class="modal-body">
+         <h3> <span class="button-text"> <b>  Enter First Number </b> </span> </h3> <input type="text" id="xornum1" maxlength="8" /> </br>
+         <h3> <span class="button-text"> <b>  Enter Second Number </b> </span> </h3> <input type="text" id="xornum2" maxlength="8" /> </br>
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="XOR()" > Find XOR </button>			
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showxor"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- xor end --->
+ 
+ 
+ 
+ 
+	<!---- or --->
+	<div class="modal fade" id="myor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Logical OR of two Decimal Numbers</h4>
+       </div>
+       <div class="modal-body">
+         <h3>  <span class="button-text"> <b>  Enter First Number </b> </span>  </h3> <input type="text" id="ornum1" maxlength="8" /> </br> 
+         <h3>  <span class="button-text"> <b>  Enter Second Number </b> </span> </h3> <input type="text" id="ornum2" maxlength="8" /> </br> 
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="OR()" > Find OR </button>			
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showor"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- or end --->
+ 
+ 
+ 
+ 
+	<!---- and --->
+	<div class="modal fade" id="myand" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Logical AND of two Decimal Numbers</h4>
+       </div>
+       <div class="modal-body">
+         <h3> <span class="button-text"> <b>  Enter First Number </b> </span>  </h3> <input type="text" id="andnum1" maxlength="8" /> </br>
+         <h3> <span class="button-text"> <b>  Enter Second Number </b> </span> </h3> <input type="text" id="andnum2" maxlength="8" /> </br> 
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="AND()" > Find AND </button>	 		
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showand"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- and end --->
+ 
+ 
+ 
+	<!---- Ratio --->
+	<div class="modal fade" id="myratio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ratio of Two Decimal Numbers</h4>
+       </div>
+       <div class="modal-body">
+         <h3> <span class="button-text"> <b> Enter First Number </b> </span>  </h3> <input type="text" id="rationum1" maxlength="8" /> </br> 
+         <h3> <span class="button-text"> <b>  Enter Second Number </b> </span> </h3> <input type="text" id="rationum2" maxlength="8" /> </br>
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="RATIO()" > Find Ratio </button>			
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showratio"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- Ratio end --->
+ 
+ 
+    <!---- binary to decimal --->
+	<div class="modal fade" id="myb2d" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Binary To Decimal Conversion</h4>
+       </div>
+       <div class="modal-body">
+         <h3> <span class="button-text"> <b>  Enter A Binry Number </b> </span>  </h3> <input type="text" id="binarynum1" maxlength="8" /> </br>  
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="B2D()" > Find Decimal </button>			
+       </div>
+       <div class="modal-footer"style="background:lightblue;">
+	    <label id="showb2d"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!----end of binary to decimal --->
+ 
+ 
+ 
+    <!---- decimal to binary --->
+	<div class="modal fade" id="myd2b" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Decimal To Binary Conversion</h4>
+       </div>
+       <div class="modal-body">
+         <h3>  <span class="button-text"> <b>  Enter A Decimal Number </b> </span> </h3> <input type="text" id="decimalnum1" maxlength="8" /> </br>  
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="D2B()" > Find Binary </button>	 		
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showd2b"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!----end of decimal to binary --->
+ 
+ 
+    <!-- START OF HIT COUNTER CODE -->
+
+<img src="http://counter5.01counter.com/private/freecounterstat.php?c=d3f848dd8683bc78e5327e3896cf9d19" border="0" title="free website hit counter" alt="free website hit counter"></a>
+ 
+ 
+ 
+    <!-- END OF HIT COUNTER CODE -->
+ 
+ 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

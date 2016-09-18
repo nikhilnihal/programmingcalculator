@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" ng-app="myModule">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bootstrap Calculator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-min.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/internal_function.js"></script>
+	<script src="js/angular.js"> </script>
+    <script src="js/code.js"> </script>
+    <link rel="stylesheet" href="css/code.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+  </head>
+
+  
+<body style="background:lightblue;">
+      <div class="header clearfix navbar navbar-inverse" id="nav">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="index.html">Home</a></li>
+            <li role="presentation"><a href="download.html">Download</a></li>
+            <li role="presentation"><a href="code.html">Code</a></li>
+          </ul>
+        </nav>
+      </div>
+	  
+	  <div class="container" style="height:100%; background:lightblue;">
+       <div class="jumbotron">
+	    <div id="structure" ng-controller="myController" style="background:lightblue;"> 
+	     <div id="search">
+		 <span class="button-text">
+	     <input type="text" placeholder="Type to search name" ng-model="searchText.name" /> &nbsp; &nbsp;
+	     Rows to display :<input type="number" step="1" min="0" max="9" ng-model="rowlimit"/> </span>
+	     </div>
+	   
+        <table id="tab">
+		  <div id="mid">
+		    <thead>
+		     <tr>
+			  <th id="th1" ng-click="sortData('name')">
+			     &nbsp; &nbsp; &nbsp; Name <div ng-class="getSortClass('name')"></div>
+			  </th>
+			  <th id="th2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Action </th>
+			 </tr>
+		    </thead>
+		  </div>
+		  
+		  <tbody> <!-- ng-repeat "for loop" hai -->
+		    <tr ng-repeat="technology in technologies | orderBy:sortColumn:reverseSort | limitTo:rowlimit | filter:searchText">
+			  <td id="td1" > &nbsp; &nbsp; &nbsp; <b> <span class="button-text"> {{ technology.name }} </span> </b> </td>
+			  <td id="td2" >
+			    &nbsp; &nbsp; &nbsp; &nbsp;
+			   <a ng-href="{{technology.link}}" class="btn btn-primary btn-lg" role="button">Code</a> 
+			  </td>
+			</tr>
+		  </tbody>
+		</table>
+       </div>
+	  </div>
+	 </div>
+	 
+	 
+	 
+	 
+	<!---- or --->
+	<div class="modal fade" id="myor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-header" style="background:lightblue;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Logical OR of two Decimal Numbers</h4>
+       </div>
+       <div class="modal-body">
+         <h3>  <span class="button-text"> <b>  Enter First Number </b> </span>  </h3> <input type="text" id="ornum1" maxlength="8" /> </br> 
+         <h3>  <span class="button-text"> <b>  Enter Second Number </b> </span> </h3> <input type="text" id="ornum2" maxlength="8" /> </br> 
+         </br> <button type="button" class="btn btn-primary btn-lg" id="button2" onclick="OR()" > Find OR </button>			
+       </div>
+       <div class="modal-footer" style="background:lightblue;">
+	    <label id="showor"> </label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+     </div>
+    </div>
+	<!---- or end --->
+	
+	
+	 
+</body>
